@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.eagletsoft.yotaassistant">
+    <!-- minghua.he@hotmail.com -->
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher_home"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <uses-library
+            android:name="com.yotadevices.sdk"
+            android:required="false" />
+
+        <activity
+            android:name=".ui.AssistantActivity"
+            android:autoRemoveFromRecents="true"
+            android:clearTaskOnLaunch="true"
+            android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|screenLayout|smallestScreenSize"
+            android:enabled="true"
+            android:label="镜像助手"
+            android:launchMode="singleTask"
+            android:resizeableActivity="true"
+            android:resumeWhilePausing="true"
+            android:screenOrientation="unspecified"
+            android:stateNotNeeded="true"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.NoDisplay"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.MirrorActivity"
+            android:autoRemoveFromRecents="true"
+            android:clearTaskOnLaunch="true"
+            android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|screenLayout|smallestScreenSize"
+            android:enabled="true"
+            android:label="一键镜像"
+            android:launchMode="singleTask"
+            android:resizeableActivity="true"
+            android:resumeWhilePausing="true"
+            android:screenOrientation="unspecified"
+            android:stateNotNeeded="true"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.NoDisplay"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".assistant.FloatService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen"
+            android:theme="@style/FullscreenTheme"></activity>
+    </application>
+
+</manifest>
